@@ -1,6 +1,8 @@
 # ANCHORED-Router
 Lightweight jquery clientside router
 
+Include Jquery (tested as low as 1.12.4)
+
 1) Set the class of <a> to anch_link
 2) Add another class to <a>, name it the same as your div partial
 3) Create a div partial with that same second class name as the <a> (see sample)
