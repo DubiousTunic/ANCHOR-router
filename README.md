@@ -5,8 +5,8 @@ With this you can make an entire SPA using a single HTML file plus an optional [
 
 Include Jquery (tested as low as 1.12.4)
 
-1) Set the class of a to anch_link
-2) Add another class to a, name it the same as your div partial
+1) Set the class of a to anch_link (make sure it is the first class)
+2) Add another class to a, name it the same as your div partial (make sure it is the second class)
 3) Create a div partial with that same second class name as the a (see sample)
 4) Add class "partial" to div partial(s)<br>
 Now clicking the links changes the "page" (hides/shows the partials)! 
