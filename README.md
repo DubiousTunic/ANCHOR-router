@@ -23,3 +23,6 @@ params can come from the server<br>
 $.post("/serverRoute", function(res){
   $(".poison_dart_frog").attr("rel", res.params)	
 })
+
+See it here:
+<a href="https://dubioustunic.github.io/ANCHORED/sample.html">Sample</a>
