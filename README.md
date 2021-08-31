@@ -1,6 +1,8 @@
 # ANCHORED-Router
 Lightweight jquery clientside router
 
+With this you can make an entire SPA using a single HTML file plus an optional [nodejs] server file
+
 Include Jquery (tested as low as 1.12.4)
 
 1) Set the class of a to anch_link
