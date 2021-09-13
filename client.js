@@ -4,11 +4,11 @@ $(document).ready(function(){
 	$(".partial").hide();
 
 	//routes the path on load
-	route(window.location.pathname + window.location.hash + window.location.search)
+	_ANCHOR_route(window.location.hash + window.location.search)
 
 	$(".anch_link").click(function(e){
 		e.preventDefault();
-		route("#" + anchorPath($(this)) + anchorParams($(this)))
+		_ANCHOR_route("#" + anchorPath($(this)) + anchorParams($(this)))
 	})
 
 })
@@ -26,18 +26,22 @@ function getLink(origin){
 	}
 }
 
-function _ANCHOR_page(page){
-	return anchorPath === page;
-}
-
 function _ANCHOR_route(origin){
 	console.log("INITIALIZE ORIGIN " + origin);
 	hidePartial();
-	var link = getLink(origin);			
+	var link = getLink(window.location.pathname + origin);			
 	history.pushState(origin, '', origin)
-	router(link.path, link.params)			
+	router(link.path, link.params)
+	showDiv(link.path);
 }
 
+
+function _ANCHOR_page(page){
+	return anchorPath() === page;
+}
+
+
+//back/forward
 window.addEventListener('popstate', function(event){
 	var origin = event.state;
 
@@ -45,9 +49,14 @@ window.addEventListener('popstate', function(event){
 	if(origin !== null){	
 		var link = getLink(origin);
 		hidePartial();
-		router(link.path, link.params);		
+		//router(link.path, link.params);	
+		showDiv(link.path);
 	}									
 })
+
+function showDiv(path){
+	$("div." + path).show();
+}
 
 function anchorPath(href){
 	return href.attr("class").split(/\s+/)[1];
@@ -57,11 +66,3 @@ function anchorParams(href){
 	return href.attr("rel");
 }
 
-//make back/forward work
-
-//main router fn
-function router(path, params){
-	$("div." + path).show();
-
-	//display path, params in url
-}
