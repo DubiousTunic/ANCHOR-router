@@ -26,7 +26,11 @@ function getLink(origin){
 	}
 }
 
-function route(origin){
+function _ANCHOR_page(page){
+	return anchorPath === page;
+}
+
+function _ANCHOR_route(origin){
 	console.log("INITIALIZE ORIGIN " + origin);
 	hidePartial();
 	var link = getLink(origin);			
