@@ -4,7 +4,7 @@ $(document).ready(function(){
 	$(".partial").hide();
 
 	//routes the path on load
-	_ANCHOR_route(window.location.hash + window.location.search)
+	//_ANCHOR_route(window.location.hash + window.location.search)
 
 	$("._anch_link").click(function(e){
 		e.preventDefault();
@@ -26,17 +26,27 @@ function getLink(origin){
 	}
 }
 
+function _ANCHOR_load(){
+	_ANCHOR_route(window.location.hash + window.location.search);
+}
+
 function _ANCHOR_route(origin){
 	console.log("INITIALIZE ORIGIN " + origin);
 	hidePartial();
 	var link = getLink(window.location.pathname + origin);			
-	history.pushState(origin, '', origin)	
+	history.pushState(origin, '', origin)
+	//router(link.path, link.params)
 	showDiv(link.path);
 }
 
+function _ANCHOR_page(){
+	console.log(window.location.hash, page)
+	return getLink(window.location.hash);
+}
+
+//back/forward
 window.addEventListener('popstate', function(event){
 	var origin = event.state;
-
 	//route(path);
 	if(origin !== null){	
 		var link = getLink(origin);
@@ -57,3 +67,4 @@ function anchorPath(href){
 function anchorParams(href){
 	return href.attr("rel");
 }
+
