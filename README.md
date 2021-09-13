@@ -14,6 +14,10 @@ Now clicking the links changes the "page" (hides/shows the partials)!
 manually route<br>
 _ANCHOR_route("#tree_frog" + "?param1=x")
 
+check page<br>
+if(_ANCHOR_page() === "tree_frog){
+}
+
 to change the params change the "rel" tag of the a element<br>
 $(".poison_dart_frog").attr("rel", "?param1=a&param2=b&param3=c")
 
