@@ -30,8 +30,7 @@ function _ANCHOR_route(origin){
 	console.log("INITIALIZE ORIGIN " + origin);
 	hidePartial();
 	var link = getLink(window.location.pathname + origin);			
-	history.pushState(origin, '', origin)
-	router(link.path, link.params)
+	history.pushState(origin, '', origin)	
 	showDiv(link.path);
 }
 
@@ -57,13 +56,4 @@ function anchorPath(href){
 
 function anchorParams(href){
 	return href.attr("rel");
-}
-
-//make back/forward work
-
-//main router fn
-function router(path, params){
-
-
-	//display path, params in url
 }
