@@ -35,11 +35,9 @@ function _ANCHOR_route(origin){
 	showDiv(link.path);
 }
 
-
-function _ANCHOR_page(page){
-	return anchorPath() === page;
+function _ANCHOR_page(){
+	return getLink(window.location.hash).path
 }
-
 
 //back/forward
 window.addEventListener('popstate', function(event){
