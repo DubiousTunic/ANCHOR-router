@@ -35,11 +35,6 @@ function _ANCHOR_route(origin){
 	showDiv(link.path);
 }
 
-function _ANCHOR_page(){
-	return getLink(window.location.hash).path
-}
-
-//back/forward
 window.addEventListener('popstate', function(event){
 	var origin = event.state;
 
@@ -64,3 +59,11 @@ function anchorParams(href){
 	return href.attr("rel");
 }
 
+//make back/forward work
+
+//main router fn
+function router(path, params){
+
+
+	//display path, params in url
+}
