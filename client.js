@@ -4,9 +4,9 @@ $(document).ready(function(){
 	$(".partial").hide();
 
 	//routes the path on load
-	_ANCHOR_route(window.location.hash + window.location.search)
+	//_ANCHOR_route(window.location.hash + window.location.search)
 
-	$(".anch_link").click(function(e){
+	$("._anch_link").click(function(e){
 		e.preventDefault();
 		_ANCHOR_route("#" + anchorPath($(this)) + anchorParams($(this)))
 	})
