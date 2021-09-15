@@ -8,6 +8,7 @@ $("._anch_link").click(function(e){
 	e.preventDefault();
 	_ANCHORED_route("#" + anchorPath($(this)) + anchorParams($(this)))
 })
+})
 
 
 
