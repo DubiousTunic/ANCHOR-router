@@ -64,4 +64,4 @@ function anchorPath(href){
 function anchorParams(href){
 	return href.attr("rel");
 }
-})
+
