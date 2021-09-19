@@ -7,7 +7,7 @@ $(".partial").hide();
 $("._anch_link").click(function(e){
 	e.preventDefault();
 
-	_ANCHOR3D_route("#" + anchorPath($(this)) + anchorParams($(this)))
+	ANCHOR3D_route("#" + anchorPath($(this)) + anchorParams($(this)))
 })
 
 })
@@ -24,7 +24,7 @@ window.addEventListener('popstate', function(event){
 		showDiv(link.path);
 
 		//TODO : shouldn't this use ANCHORED route?
-		$(document).trigger("_ANCHOR3D_load");
+		$(document).trigger("ANCHOR3D_load");
 
 	}									
 })
@@ -47,20 +47,20 @@ function getLink(origin){
 	}
 }
 
-function _ANCHOR3D_load(){	
+function ANCHOR3D_load(){	
 	_ANCHOR3D_route(window.location.hash + window.location.search)
 }
 
-function _ANCHOR3D_page(){
+function ANCHOR3D_page(){
 	return getLink(window.location.hash).path
 }
 
-function _ANCHOR3D_route(origin){
+function ANCHOR3D_route(origin){
 	console.log("INITIALIZE ORIGIN " + origin);
 	hidePartial();
 	var link = getLink(window.location.pathname + origin);			
 	history.pushState(origin, '', origin)
-	$(document).trigger("_ANCHOR3D_load");
+	$(document).trigger("ANCHOR3D_load");
 	showDiv(link.path);
 }
 
