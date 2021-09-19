@@ -48,7 +48,7 @@ function getLink(origin){
 }
 
 function ANCHOR3D_load(){	
-	_ANCHOR3D_route(window.location.hash + window.location.search)
+	ANCHOR3D_route(window.location.hash + window.location.search)
 }
 
 function ANCHOR3D_page(){
