@@ -1,4 +1,4 @@
-# ANCHORED-Router
+# ANCHOR3D-Router
 Lightweight jquery clientside router
 
 With this you can make an entire SPA using a single HTML file plus an optional [nodejs] server file
