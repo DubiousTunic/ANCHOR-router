@@ -1,38 +1,34 @@
-# ANCHOR3D-Router
+# ANCHOR-router
 Lightweight jquery clientside router
 
 With this you can make an entire SPA using a single HTML file plus an optional [nodejs] server file
 
 Include Jquery (tested as low as 1.12.4)
 
-1) Set the class of a to _anch_link (make sure it is the first class)
+1) Set the class of a to ANCHOR (make sure it is the first class)
 2) Add another class to a, name it the same as your div partial (make sure it is the second class)
 3) Create a div partial with that same second class name as the a (see sample)
-4) Add class "partial" to div partial(s)<br>
+4) Add class "ANCHOR_partial" to div partial(s)<br>
 Now clicking the links changes the "page" (hides/shows the partials)! 
 
 on page load:
-ANCHOR3D_load();
+ANCHOR_load();
 
 manually route<br>
-ANCHOR3D_route("#tree_frog" + "?param1=x")
+ANCHOR_route("#tree_frog" + "?param1=x")
 
 check page<br>
-if(ANCHOR3D_page() === "tree_frog){
+if(ANCHOR_page() === "tree_frog){
 }
 
-to change the params change the "rel" tag of the a element<br>
-$(".poison_dart_frog").attr("rel", "?param1=a&param2=b&param3=c")
+//TODO: handling params, for now use ANCHOR.getParams()
 
 route can come from the server<br>
 $.post("/update", function(res){
-  ANCHOR3D_route("#tree_frog" + "?param1=x")
+  ANCHOR_route("#tree_frog" + "?param1=" + res.x)
 })
-
-params can come from the server<br>
-$.post("/serverRoute", function(res){
-  $(".poison_dart_frog").attr("rel", res.params)	
-})
+  
+for dynamically added ANCHOR links, use ANCHOR.buffer() after they are added...
 
 See it here:
 <a href="https://dubioustunic.github.io/ANCHORED/sample.html">Sample</a>
