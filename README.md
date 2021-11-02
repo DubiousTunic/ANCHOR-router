@@ -12,13 +12,13 @@ Include Jquery (tested as low as 1.12.4)
 Now clicking the links changes the "page" (hides/shows the partials)! 
 
 on page load:
-ANCHOR_load();
+ANCHOR.load();
 
 manually route<br>
-ANCHOR_route("#tree_frog" + "?param1=x")
+ANCHOR.route("#tree_frog" + "?param1=x")
 
 check page<br>
-if(ANCHOR_page() === "tree_frog){
+if(ANCHOR.page() === "tree_frog){
 }
 
 //TODO: handling params, for now use ANCHOR.getParams()
